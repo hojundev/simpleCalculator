@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Calculator {
     public static void main(String[] args) {
@@ -11,26 +10,15 @@ public class Calculator {
 
         switch(choice) {
             case 1:
-                elementaryCalculator calculator = new elementaryCalculator();
-                calculator.createElementaryCalculator();
-                calculator.getResult();
+                elementaryCalculator arithmetic = new elementaryCalculator();
+                arithmetic.createElementaryCalculator();
                 break;
             case 2:
-                System.out.println("Please enter the dimension: ");
-                int dimension = scanner.nextInt();
-                dotProd resultVec = new dotProd();
-                resultVec.setDotProd(dimension);
-                System.out.println("The resulting vector is: " + Arrays.toString(resultVec.getResult()));
+                dotProd dotProduct = new dotProd();
+                dotProduct.setDotProd();
                 break;
             default:
                 System.err.println("Invalid choice. Please select 1 or 2");
         }
-
-
-//        System.out.println("Please enter the dimension: ");
-//        int dimension = scanner.nextInt();
-//        dotProd resultVec = new dotProd();
-//        resultVec.setDotProd(dimension);
-//        System.out.println("The resulting vector is: " + Arrays.toString(resultVec.getResult()));
     }
 }
