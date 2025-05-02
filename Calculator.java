@@ -9,24 +9,28 @@ public class Calculator {
         System.out.println("2. Dot Product");
         int choice = scanner.nextInt();
 
-        if (choice == 1) {
-            System.out.println("Please enter the first number: ");
-            double num1 = scanner.nextDouble();
-            System.out.println("Please enter the operator: ");
-            String operator = scanner.next();
-            System.out.println("Please enter the second number: ");
-            double num2 = scanner.nextDouble();
-            elementaryCalculator calculation = new elementaryCalculator();
-            calculation.calculate(operator, num1, num2);
-            if (!calculation.isError()) {
-                System.out.println("The result is: " + calculation.getResult());
-            }
-        } else {
-            System.out.println("Please enter the dimension: ");
-            int dimension = scanner.nextInt();
-            dotProd resultVec = new dotProd();
-            resultVec.setDotProd(dimension);
-            System.out.println("The resulting vector is: " + Arrays.toString(resultVec.getResult()));
+        switch(choice) {
+            case 1:
+                elementaryCalculator calculator = new elementaryCalculator();
+                calculator.createElementaryCalculator();
+                calculator.getResult();
+                break;
+            case 2:
+                System.out.println("Please enter the dimension: ");
+                int dimension = scanner.nextInt();
+                dotProd resultVec = new dotProd();
+                resultVec.setDotProd(dimension);
+                System.out.println("The resulting vector is: " + Arrays.toString(resultVec.getResult()));
+                break;
+            default:
+                System.err.println("Invalid choice. Please select 1 or 2");
         }
+
+
+//        System.out.println("Please enter the dimension: ");
+//        int dimension = scanner.nextInt();
+//        dotProd resultVec = new dotProd();
+//        resultVec.setDotProd(dimension);
+//        System.out.println("The resulting vector is: " + Arrays.toString(resultVec.getResult()));
     }
 }
