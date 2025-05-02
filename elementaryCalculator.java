@@ -25,6 +25,8 @@ public class elementaryCalculator {
             errorIndication = 1;
             System.err.println("Invalid operator");
         }
+        scanner.close();
+        getResult();
     }
 
     private void calculate() {
@@ -46,7 +48,7 @@ public class elementaryCalculator {
         }
     }
 
-    public void getResult() {
+    private void getResult() {
         if (!isError()) {
             System.out.println("The result is: " + result);
         } else {
